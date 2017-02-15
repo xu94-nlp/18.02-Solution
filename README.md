@@ -1,0 +1,2 @@
+This repo stores my solutions of the supplemental problem sets from MIT 18.02SC Fall 2010. Only the solutions for the problems without solutions in the supplemental problem sets are recorded. 
+All the answers are done by myself. If there are any mistakes, please email to me lu.yuxun.lp6 GUESS_WHICH_SYMBOL_IS_HERE naist.jp. Thanks.
