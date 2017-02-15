@@ -23,7 +23,19 @@
     \label{1A-12 Figure}
 \end{figure}
 \begin{proof}
-Suppose $\vec{OP} = \mathbf{a}$ and $\vec{OR} = \mathbf{b}$.
+Suppose $\overrightarrow{OP} = \mathbf{a}$ and $\overrightarrow{OR} = \mathbf{b}$.
+\\ We have: $\overrightarrow{RP} = \mathbf{a} - \mathbf{b}$ (1), $\overrightarrow{OM} = \mathbf{a} + \frac{1}{2} \mathbf{b}$ (2), $\overrightarrow{OX} = \mathbf{b} + \overrightarrow{RX}$ (3).
+\\Let $\overrightarrow{OX} = u(\mathbf{a} + \frac{1}{2}\mathbf{b})$, $\overrightarrow{RX} = (1 - v)(\mathbf{a} - \mathbf{b})$.
+\\ From (3) we can derive:
+\\ $\mathbf{b} + \overrightarrow{RX} = \overrightarrow{OX} = u\mathbf{a} + \frac{u}{2}\mathbf{b} = \mathbf{b} + (1-v)\mathbf{a} - (1-v)\mathbf{b}$
+that is, 
+\begin{equation}
+    \begin{cases}
+    u = 1 - v
+    \\ v = \frac{u}{2}
+    \end{cases}
+\end{equation}
+Solve equations in (1), we have $u = \frac{2}{3}, v = \frac{1}{3}$. So $\overrightarrow{OX} = \frac{2}{3} \overrightarrow{OM}$ and $\overrightarrow{RX} = \frac{2}{3} \overrightarrow{RP}$, i.e. the intersection point X of RP and OM is 1/3 of the way from P to R.
 \end{proof}
 
 \end{document}
