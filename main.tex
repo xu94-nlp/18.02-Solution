@@ -7,6 +7,10 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -102,5 +106,35 @@ We are going to use strong induction.
 \begin{proof}
 a) Suppose $n$ is a even number, two vectors $\overrightarrow{OP_i}$ and $\overrightarrow{OP_{i+n/2}}$ neutralized ($i \leq n/2 \wedge i \in \mathbb{N}^+$) because they have the same length/magnitude (because O is the n-gon's center) and opposite direction, thus $\overrightarrow{OP_1} + \overrightarrow{OP_2} + ... + \overrightarrow{OP_n} = \mathbf{0}$ when $n$ is a even number and $n \geq 4$.
 \\ b) Suppose $n$ is an odd number, the vector $\overrightarrow{OP_i} + \overrightarrow{OP_{i+1}}$ is with the same length of the opposite vector $\overrightarrow{OP_j}$ that the point $P_j$ is opposite to the side where $\overrightarrow{OP_i}$ and $\overrightarrow{OP_{i+1}}$ towards because $\bigtriangleup P_iP_{i+1}P_j$ is a triangle and $O$ is the centroid of $\bigtriangleup P_iP_{i+1}P_j$ too. By the property of the centroid we have  $\overrightarrow{OP_j} = - (\overrightarrow{OP_i} + \overrightarrow{OP_{i+1}})$. For any n-gon that $n$ is a odd number and $n \geq 3$, for any vertex in that n-gon, there are two other different vertices of the n-gon that such three vertices form a triangle with $O$ as its centroid. Thus, $\overrightarrow{OP_1} + \overrightarrow{OP_2} + ... + \overrightarrow{OP_n} = \mathbf{0}$ where $n$ is an odd number and $n \geq 3$.
+\end{proof}
+%
+% Section 1.2 B. Dot Product
+%
+\subsection{Dot Product}
+%
+% 1B-15*
+%
+\textbf{1B-15*} The \textbf{Cauchy-Schwarz inequality}
+\\ a) Prove from the geometric definition of the dot product the following inequality for vectors in the plane or space; under what circumstances does equality hold?
+\begin{equation}
+    |\mathbf{A} \cdot \mathbf{B} | \leq |\mathbf{A}||\mathbf{B}|
+\end{equation}
+b) If the vectors are plane vectors, write out what this inequality says in terms of \textbf{i j}-components.
+\\c) Give a different argument for the inequality (*) as follows (this argument generalizes to $n$-dimensional space):
+\\i) for all values of $t$, we have (\textbf{A} + $t$\textbf{B}) $\cdot$ (\textbf{A} + $t$\textbf{B}) $\geq 0$.
+\\ii) use the algebraic laws of the dot product to write the expression in (i) as a quadratic polynomial in $t$;
+\\iii) by (i) this polynomial has at most one zero; this implies by the quadratic formula that its coefficients must satisfy a certain inequality - what is it?
+%
+% 1B-15* Solution
+%
+\begin{proof}
+a) The component of \textbf{A} on the direction of \textbf{B} is great than or equal to the product of \textbf{A} and \textbf{B}'s lengths. The equality holds \textit{iff} \textbf{A} and \textbf{B} are in the same line, i.e. the angle between vector \textbf{A} and \textbf{B} is 180-degree or 0-degree.
+\\b) Suppose $\mathbf{A} = (x_1, y_1)$ and $\mathbf{B} = (x_2, y_2)$. The equality says
+\begin{equation}
+    |x_1x_2 + y_1y_2| \leq \sqrt{(x_1^2 + y_1^2)(x_2^2+y_2^2)}
+\end{equation}
+\\c-i) Another argument for this statement is that, in any n-dimensional vector space, the length of the vectors in that vector space is great than or equal to 0.
+\\c-ii) Suppose $\mathbf{A} = (x_1, x_2, x_3, ..., x_n)$ and $\mathbf{B} = (y_1, y_2, y_3, ..., y_n)$. Let $f(t) = (\mathbf{A} + t\mathbf{B})^2$, i.e. $f(t) = \sum_{i=1}^n (x_i + ty_i)^2 = \sum_{i=1}^n ( x_i^2 + t^2y_i^2 + 2tx_iy_i)$. By (i), $f(t) \geq 0$.
+\\c-iii) $f(t) = t^2 \sum_{i=1}^ny_i^2 + 2t \sum_{i=1}^n x_iy_i + \sum_{i=1}^n x_i^2$. Re-write $f(t) = at^2 + bt + c$ where $c = \sum_{i=1}^n x_i^2$, $b = \sum_{i=1}^n 2x_iy_i$ and $a = \sum_{i=1}^n y_i^2$. By (i) we know $f(t) \geq 0$, then the coefficients $a,b,c$ must satisfy $b^2 - 4ac \leq 0$, i.e. $\sum_{i=1}^n (2x_iy_i)^2 - 4\sum_{i=1}^n x_i^2y_i^2 \leq 0 $. By arithmetic we know $b^2 - 4ac$ always equal to $0$, i.e. the coefficient satisfies the inequality.
 \end{proof}
 \end{document}
