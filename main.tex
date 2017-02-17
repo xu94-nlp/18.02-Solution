@@ -110,7 +110,7 @@ a) Suppose $n$ is a even number, two vectors $\overrightarrow{OP_i}$ and $\overr
 %
 % Section 1.2 B. Dot Product
 %
-\subsection{Dot Product}
+\subsection{B. Dot Product}
 %
 % 1B-15*
 %
@@ -136,5 +136,63 @@ a) The component of \textbf{A} on the direction of \textbf{B} is great than or e
 \\c-i) Another argument for this statement is that, in any n-dimensional vector space, the length of the vectors in that vector space is great than or equal to 0.
 \\c-ii) Suppose $\mathbf{A} = (x_1, x_2, x_3, ..., x_n)$ and $\mathbf{B} = (y_1, y_2, y_3, ..., y_n)$. Let $f(t) = (\mathbf{A} + t\mathbf{B})^2$, i.e. $f(t) = \sum_{i=1}^n (x_i + ty_i)^2 = \sum_{i=1}^n ( x_i^2 + t^2y_i^2 + 2tx_iy_i)$. By (i), $f(t) \geq 0$.
 \\c-iii) $f(t) = t^2 \sum_{i=1}^ny_i^2 + 2t \sum_{i=1}^n x_iy_i + \sum_{i=1}^n x_i^2$. Re-write $f(t) = at^2 + bt + c$ where $c = \sum_{i=1}^n x_i^2$, $b = \sum_{i=1}^n 2x_iy_i$ and $a = \sum_{i=1}^n y_i^2$. By (i) we know $f(t) \geq 0$, then the coefficients $a,b,c$ must satisfy $b^2 - 4ac \leq 0$, i.e. $\sum_{i=1}^n (2x_iy_i)^2 - 4\sum_{i=1}^n x_i^2y_i^2 \leq 0 $. By arithmetic we know $b^2 - 4ac$ always equal to $0$, i.e. the coefficient satisfies the inequality.
+\end{proof}
+%
+% 1C Determinants
+%
+\subsection{C. Determinants}
+%
+% 1C-8
+%
+\textbf{1C-8*} The base of a parallelepiped is a parallelogram whose edges are the vectors \textbf{b} and \textbf{c}, while its third edge is the vector \textbf{a}. (All three vectors have their tail at the same vertex; one calls them ``coterminal".)
+\\ a) Show that the volume of the parallelepiped \textbf{abc} is $\pm\mathbf{a} \cdot ( \mathbf{b} \times \mathbf{c})$.
+\\ b) Show that $\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})$ = the determinant whose rows are respectively the components of the vectors \textbf{a,b,c}.
+\\ (These two parts prove the volume interpretation of a $3 \times 3$ determinant.)
+% 
+% 1C-8 Solution
+%
+\begin{proof}
+a) $\because \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = |\mathbf{a}||\mathbf{b} \times \mathbf{c}| \cdot cos<\mathbf{a}, \mathbf{b} \times \mathbf{c}>$ 
+\\ = $|\mathbf{a}|cos<\mathbf{a}, \mathbf{b} \times \mathbf{c}>||\mathbf{b}||\mathbf{c}|sin<\mathbf{b},\mathbf{c}>|$ 
+\\ ($\because \mathbf{b} \times \mathbf{c}= |\mathbf{b}||\mathbf{c}|sin<\mathbf{b},\mathbf{c}>)$.
+\\$\because \mathbf{b} \times \mathbf{c} \perp \mathbf{b}$ and $\mathbf{b} \times \mathbf{c} \perp \mathbf{c}$. 
+\\ $\therefore \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})$ = component on the side of $(\mathbf{b} \times \mathbf{c})$ multiplies $|\mathbf{b} \times \mathbf{c}|$.
+\\ $\because |\mathbf{b} \times \mathbf{c}|$ is the area of parallelogram where two sides are \textbf{b} and \textbf{c}.
+\\ $\therefore |\mathbf{a}\cdot|\mathbf{b}\times\mathbf{c}||$ is the volumn of the parallelepiped, i.e. $\pm \mathbf{a}\cdot(\mathbf{b} \times \mathbf{c})$ is the volumn of the parallelepiped \textbf{abc}. $\square$
+\\b) Because
+\begin{align*} 
+  \begin{vmatrix}
+  a_1 & a_2 & a_3 \\
+  b_1 & b_2 & b_3 \\
+  c_1 & c_2 & c_3 \\
+  \end{vmatrix}
+= a_1(b_2 c_3 - b_3 c_2) - a_2(b_1 b_3 - b_3 c_1) + a_3(b_1 c_2 - b_2 c_1)
+\\ = a_1(b_2 c_3 - b_3 c_2) + a_2(b_3 c_1 - b_1 b_3) + a_3(b_1 c_2 - b_2 c_1)
+\end{align*}
+and
+\begin{align*}
+    \begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+    b_1 & b_2 & b_3 \\
+    c_1 & c_2 & c_3 \\
+    \end{vmatrix}
+    = (b_2 b_3 - b_3 c_2)\mathbf{i} - (b_1 c_3 - b_3 c_1) \mathbf{j} + (b_1 c_2 - b_2 c_1) \mathbf{k}
+\\  = (b_2 b_3 - b_3 c_2)\mathbf{i} + (b_3 c_1 - b_1 c_3) \mathbf{j} + (b_1 c_2 - b_2 c_1) \mathbf{k}
+\end{align*}
+Therefore,
+\begin{align*}
+    \mathbf{a} \cdot
+    \begin{vmatrix}
+      \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+      b_1 & b_2 & b_3 \\
+      c_1 & c_2 & c_3 \\
+    \end{vmatrix}
+    =
+    \begin{vmatrix}
+    a_1 & a_2 & a_3 \\
+    b_1 & b_2 & b_3 \\
+    c_1 & c_2 & c_3 \\
+    \end{vmatrix}
+\end{align*}
 \end{proof}
 \end{document}
