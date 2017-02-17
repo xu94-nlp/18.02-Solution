@@ -195,4 +195,140 @@ Therefore,
     \end{vmatrix}
 \end{align*}
 \end{proof}
+%
+% 1E. Equations of Lines and Planes
+%
+%
+% 1F. Matrix Algebra
+%
+\subsection{F. Matrix Algebra}
+\textbf{1F-10*} Suppose $A$ is a $2 \times 2$ orthogonal matrix, whose first entry is $a_{11} = cos \theta$. Fill in the rest of $A$. (There are four possibilities. Use Exercise 9.)
+\begin{proof}
+There are more than 4 possibilities. The proof is as follows.
+\\ Suppose
+$A = 
+\begin{pmatrix}
+cos\theta & a_{12} \\
+a_{21} & a_{22} \\
+\end{pmatrix}$. \\
+$AA^T = 
+\begin{pmatrix}
+cos\theta & a_{12} \\
+a_{21} & a_{22} \\
+\end{pmatrix}
+\begin{pmatrix}
+cos\theta & a_{21} \\
+a_{12} & a_{22} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+cos^2\theta + a_{12}^2 & cos\theta a_{21} + a_{12}a_{22} \\
+cos\theta a_{21} + a_{12}a_{22} & a_{21}^2 + a_{22}^2 \\
+\end{pmatrix}
+\\ \because AA^T = I, 
+\\ \therefore$
+\begin{equation}
+ \begin{cases}
+cos\theta a_{21} + a_{12} a_{22} = 0 \\
+cos\theta a_{21} + a_{12} a_{22} = 0 \\
+a_{21}^2 + a_{22}^2 = 1 \\
+cos^2\theta + a_{12}^2 = 1 \\
+\end{cases}
+\implies
+a_{12}^2 = sin^2\theta, a_{12} = \pm sin\theta
+\end{equation}
+- Case 1 $a_{12} = sin\theta$
+\\ 
+$
+\begin{cases}
+a_{21} = -sin\theta \\
+a_{22} = cos\theta \\
+\end{cases}
+$
+$
+\begin{cases}
+a_{21} = sin\theta \\
+a_{22} = -cos\theta \\
+\end{cases}
+$
+$
+\begin{cases}
+a_{21} = -sin\theta \\
+a_{22} = cos(-\theta) \\
+\end{cases}
+$
+$
+\begin{cases}
+a_{21} = sin(-\theta) \\
+a_{22} = cos\theta \\
+\end{cases}
+$
+\\Generally, we shall ensure $cos\theta a_{21} + sin\theta a_{22} = 0$ here (the $\sin \theta$ in the equation is $a_{12}$ because we are discussing the case that $a_{12} = sin\theta$.), by using trigonometric formula $cos\alpha sin\beta + cos\beta sin\alpha = sin(\alpha + \beta)$ here, we can derive that all
+$
+\begin{cases}
+a_{21} = sin(2k\pi - \theta) \\
+a_{22} = cos(2k\pi - \theta) \\
+\end{cases}
+(k \in \mathbb{N}^+)
+$
+satisfy the requirement that $AA^T = I$.
+\\
+\\- Case 2 $a_{12} = -sin\theta$
+\\ Analogously, 
+\\
+$
+\begin{cases}
+a_{21} = sin\theta \\
+a_{22} = cos\theta \\
+\end{cases}
+$
+,
+$
+\begin{cases}
+a_{21} = -sin\theta \\
+a_{22} = -cos\theta \\
+\end{cases}
+$
+and
+$
+\begin{cases}
+a_{21} = cos(\frac{(2k+1) \pi}{2} - \theta)\\
+a_{22} = sin(\frac{(2k+1) \pi}{2} - \theta)\\
+\end{cases}
+k \in \mathbb{N}
+$
+satisfy the requirement $AA^T = I$. (The third one uses $cos(\alpha + \beta) = cos\alpha cos\beta - sin\alpha sin\beta$.) 
+\end{proof}
+\textbf{1F-11*} Show that if $A + B$ and $AB$ are defined, then
+\\ a) $(A + B)^T = A^T + B^T$ (b) $(AB)^T = B^TA^T$
+\begin{proof}
+$
+(AB)^T = 
+\begin{pmatrix}
+a_1 b_1 & a_1 b_2 & ... & a_1 b_n \\
+a_2 b_1 & a_2 b_2 & ... & a_2 b_n \\
+... & ... & ... & ... \\
+a_m b_1 & a_m b_2 & ... & a_m b_n \\
+\end{pmatrix}^T
+=
+\begin{pmatrix}
+a_1 b_1 & a_2 b_1 & ... & a_m b_1 \\
+a_1 b_2 & a_2 b_2 & ... & a_m b_2 \\
+... & ... & ... & ... \\
+a_1 b_n & a_2 b_n & ... & a_m b_n \\
+\end{pmatrix}
+$
+\\ where $a_i$ is a row vector of $A$ and $b_j$ is a column vector of $B$, $ 1 \leq i \leq m$ and $1 \leq j \leq n$.
+\\
+$
+B^TA^T = 
+\begin{pmatrix}
+b_1^T a_1^T & b_1^T a_2^T & ... & b_1^T a_m^T \\
+b_2^T a_1^T & b_2^T a_2^T & ... & b_2^T a_m^T \\
+... & ... & ... & ... \\
+b_n^T a_1^T & b_n^T a_2^T & ... & b_n^T a_m^T \\
+\end{pmatrix}
+\because a_i b_j = a_i^T b_j^T \therefore (AB)^T = B^TA^T.
+$
+\end{proof}
 \end{document}
