@@ -30,7 +30,7 @@
 \begin{document}
 
 \maketitle
-
+This solution manual is for the problem set of MIT Opencourse 18.02SC Fall 2010. Answers of some problems that can be verified or solved easily are not given. All the answers are given by Yuxun LU from NAIST. Some arithmetic errors may occur. Not all answers are given with the corresponding problems. For those answers that original problems are not provided, please refer to supplemental problem sets (the Exercise on the webpage) at \url{https://ocw.mit.edu/courses/mathematics/18-02-multivariable-calculus-fall-2007/readings/supp_notes/}.
 \section{Vectors and Matrices}
 % Problem set 1: Vectors and Matrices
 \subsection{A. Vectors}
@@ -329,6 +329,82 @@ b_2^T a_1^T & b_2^T a_2^T & ... & b_2^T a_m^T \\
 b_n^T a_1^T & b_n^T a_2^T & ... & b_n^T a_m^T \\
 \end{pmatrix}
 \because a_i b_j = a_i^T b_j^T \therefore (AB)^T = B^TA^T.
+$
+\end{proof}
+%
+% 1G. Solving Square Systems; Inverse Matrices
+%
+\subsection{G. Solving Square Systems; Inverse Matrices}
+For each of the following (1G-1* - 1G-2*), solve the equation $\mathbf{Ax} = \mathbf{b}$ by finding $\mathbf{A}^{-1}$.
+\\\textbf{1G-1*}
+$
+\mathbf{A} =
+\begin{pmatrix}
+3 & 1 & -1 \\
+-1 & 2 & 0 \\
+-1 & -1 & -1 \\
+\end{pmatrix}
+,
+\mathbf{b} =
+\begin{pmatrix}
+8 \\ 3 \\ 0
+\end{pmatrix}
+$
+\begin{proof}
+$
+A^{-1} = -\frac{1}{10}
+\begin{pmatrix}
+-2 & 2 & 2 \\
+-1 & -4 & 1 \\
+3 & 2 & 7 \\
+\end{pmatrix}
+,
+x = \begin{pmatrix}
+1 \\ 2 \\ -3
+\end{pmatrix}
+$
+\end{proof}
+\textbf{1G-*} a) 
+$
+A = \begin{pmatrix}
+4 & 3 \\
+3 & 2 \\
+\end{pmatrix}
+,
+b = \begin{pmatrix}
+-1 \\ 1
+\end{pmatrix}
+$
+b)
+$
+A = 
+\begin{pmatrix}
+4 & 3 \\
+3 & 2 \\
+\end{pmatrix}
+,
+b = \begin{pmatrix}
+2 & 3
+\end{pmatrix}
+$
+\begin{proof}
+a) $A^{-1} = \begin{pmatrix}
+-2 & 3 \\
+3 & -4 \\
+\end{pmatrix}
+,
+x = \begin{pmatrix}
+5 \\ -7
+\end{pmatrix}
+$
+b) $A^{-1} = \begin{pmatrix}
+-2 & 3 \\
+3 & -4 \\
+\end{pmatrix}
+,
+x = \begin{pmatrix}
+5 \\ -6
+\end{pmatrix}
 $
 \end{proof}
 \end{document}
