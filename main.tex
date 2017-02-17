@@ -39,6 +39,17 @@ The centroid of a triangle is the point of intersection of its medians (the line
 \end{theorem}
 For the theorem above, refer \url{https://en.wikipedia.org/wiki/Centroid} ``Of triangle" part for details.
 
+\begin{theorem}[A trick for matrices multiplication]
+Suppose $\mathbf{A} = \begin{pmatrix}
+\mathbf{a}_1 & \mathbf{a}_2 & ... & \mathbf{a}_n
+\end{pmatrix}, \mathbf{B} = \begin{pmatrix}
+\mathbf{b}_1 \\
+\mathbf{b}_2 \\
+... \\
+\mathbf{b}_n
+\end{pmatrix}$ where $\mathbf{a}_i$'s are row vectors and $\mathbf{b}_j$'s are column vectors ($1 \leq i,j \leq n$). $\mathbf{AB} = \mathbf{a}_1 \cdot \mathbf{b}_1 + \mathbf{a}_2 \cdot \mathbf{b}_2 + ... + \mathbf{a}_n \cdot \mathbf{b}_n = \sum_{i=1}^n \mathbf{a}_i \cdot \mathbf{b}_i$.
+\end{theorem}
+For the trick mentioned above, refer Gilbert Strang's ``Inroduction to Linear Algbera" (2nd edition) somewhere for details.
 
 % Section 1A: Vectors
 %
@@ -202,7 +213,13 @@ Therefore,
 % 1F. Matrix Algebra
 %
 \subsection{F. Matrix Algebra}
+%
+% 1F-10
+%
 \textbf{1F-10*} Suppose $A$ is a $2 \times 2$ orthogonal matrix, whose first entry is $a_{11} = cos \theta$. Fill in the rest of $A$. (There are four possibilities. Use Exercise 9.)
+%
+% 1F-10 Solution
+%
 \begin{proof}
 There are more than 4 possibilities. The proof is as follows.
 \\ Suppose
@@ -299,8 +316,14 @@ k \in \mathbb{N}
 $
 satisfy the requirement $AA^T = I$. (The third one uses $cos(\alpha + \beta) = cos\alpha cos\beta - sin\alpha sin\beta$.) 
 \end{proof}
+%
+% 1F-11
+%
 \textbf{1F-11*} Show that if $A + B$ and $AB$ are defined, then
 \\ a) $(A + B)^T = A^T + B^T$ (b) $(AB)^T = B^TA^T$
+%
+% 1F-11 Solution
+%
 \begin{proof}
 $
 (AB)^T = 
@@ -336,6 +359,9 @@ $
 %
 \subsection{G. Solving Square Systems; Inverse Matrices}
 For each of the following (1G-1* - 1G-2*), solve the equation $\mathbf{Ax} = \mathbf{b}$ by finding $\mathbf{A}^{-1}$.
+%
+% 1G-1
+%
 \\\textbf{1G-1*}
 $
 \mathbf{A} =
@@ -350,6 +376,9 @@ $
 8 \\ 3 \\ 0
 \end{pmatrix}
 $
+%
+% 1G-1 Solution
+%
 \begin{proof}
 $
 A^{-1} = -\frac{1}{10}
@@ -364,7 +393,10 @@ x = \begin{pmatrix}
 \end{pmatrix}
 $
 \end{proof}
-\textbf{1G-*} a) 
+%
+% 1G-2 
+%
+\textbf{1G-2*} a) 
 $
 A = \begin{pmatrix}
 4 & 3 \\
@@ -387,6 +419,9 @@ b = \begin{pmatrix}
 2 & 3
 \end{pmatrix}
 $
+%
+% 1G-2 Solution
+%
 \begin{proof}
 a) $A^{-1} = \begin{pmatrix}
 -2 & 3 \\
@@ -406,5 +441,86 @@ x = \begin{pmatrix}
 5 \\ -6
 \end{pmatrix}
 $
+\end{proof}
+%
+% 1G-6
+%
+\textbf{1G-6* Another calculation of the inverse matrix.}
+\\ If we know $A^{-1}$, we can solve the system $\mathbf{Ax} = \mathbf{y}$ for $\mathbf{x}$ by writing $\mathbf{x} = \mathbf{A}^{-1}\mathbf{y}$. But conversely, if we can solve by some other method (elimination, say) for $\mathbf{x}$ in terms of $\mathbf{y}$, getting $\mathbf{x} = \mathbf{B}y$, then the matrix $\mathbf{B} = \mathbf{A}^{-1}$, and we will have found $\mathbf{A}^{-1}$.
+\\ This is a good method if $\mathbf{A}$ is an upper or lower triangular matrix - one with only zeros respectively below or above the main diagonal. To illustrate:
+\\a) Let $A = \begin{pmatrix}
+-1 & 1 & 3 \\
+0 & 2 & -1 \\
+0 & 0 & 1
+\end{pmatrix}$; find $\mathbf{A}^{-1}$ by solving $\begin{cases}
+-x_1 + x_2 + 3x_3 = y_1 \\
+2x_2 - x_3 = y_2 \\
+x_3 = y_3
+\end{cases}$ for the $x_i$ in terms of the $y_i$ (start from the bottom and proceed upwards).
+\\b) Calculate $\mathbf{A}^{-1}$ by the method given in the notes.
+%
+% 1G-6 Solution
+%
+\begin{proof}
+$
+\begin{cases}
+x_1 = -y_1 + \frac{1}{2} y_2 + \frac{7}{2} y_3 \\
+x_2 = \frac{1}{2}y_2 + \frac{1}{2} y_3 \\
+x_3 = y_3\\
+\end{cases}
+\mathbf{B} = \mathbf{A}^{-1} =
+\begin{pmatrix}
+-1 & \frac{1}{2} & \frac{7}{2} \\
+0 & \frac{1}{2} & \frac{1}{2} \\
+0 & 0 & 1 \\
+\end{pmatrix}
+$
+\end{proof}
+%
+% 1G-7
+%
+\textbf{1G-7*} Consider the rotation matrix $\mathbf{A}_{\theta} = \begin{pmatrix}
+cos\theta & -sin\theta \\
+sin\theta & cos\theta \\
+\end{pmatrix}
+$ corresponding to rotation of the $x$ and $y$ axes through the angle $\theta$. Calculate $\mathbf{A_{\theta}^{-1}}$ by the adjoint matrix method, and expalin why your answer looks the way it does.
+%
+% 1G-7 Solution
+%
+\begin{proof}
+$\mathbf{A_{\theta}^{-1}} = \begin{pmatrix}
+cos\theta & sin\theta \\
+-sin\theta & cos\theta \\
+\end{pmatrix}
+$. Becasue $\mathbf{A_{\theta}}$ rotates a vector by $\theta$ degree. $\mathbf{A}_{\theta}^{-1} = \begin{pmatrix}
+cos\theta & sin\theta \\
+-sin\theta & cos\theta \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+cos(-\theta) & -sin(-\theta) \\
+sin(-\theta) & cos(-\theta) \\
+\end{pmatrix}
+$, so the $\mathbf{A}_{\theta}^{-1}$ rotates the vector rotated by $\mathbf{A}_{\theta}^{-1}$ $-\theta$ degrees, i.e. $\mathbf{A}_{\theta}^{-1}$ rotates the vector back to its origin position.
+\end{proof}
+%
+% 1G-8
+%
+\textbf{1G-8*} a) Show: $\mathbf{A}$ is an orthogonal matrix (cf. Exercise 1F-9) if and only if $\mathbf{A}^{-1} = \mathbf{A}^T$.
+\\ b) Illustrate with the matrix of exercise 7 above.
+\\ c) Use (a) to show that if $\mathbf{A}$ and $\mathbf{B}$ are $n \times n$ orthogonal matrices, so is $\mathbf{AB}$.
+%
+% 1G-8 Solution
+%
+\begin{proof}
+a) $\because \mathbf{A}\mathbf{A}^T = \mathbf{I} = \mathbf{A}\mathbf{A}^T
+\\ \therefore \mathbf{A}\mathbf{A}^T = \mathbf{A}\mathbf{A}^{-1}, \mathbf{A}^{-1}(\mathbf{A}\mathbf{A}^{T}) = \mathbf{A}^{-1}(\mathbf{A}\mathbf{A}^{-1}) \implies \mathbf{A}^{T}\mathbf{I} = \mathbf{A}^{-1}\mathbf{I}, \mathbf{A}^{T} = \mathbf{A}^{-1}$.
+\\b) $\because \mathbf{A}_{\theta}^T \mathbf{A} = \mathbf{I} \therefore \mathbf{A}_{\theta}$ is an orthogonal matrix.
+\\c) $\because (\mathbf{AB})(\mathbf{AB})^{-1} = \mathbf{I}, \therefore \mathbf{A}^T\mathbf{A}\mathbf{B}(\mathbf{AB})^{-1} = \mathbf{A}^{T}$. By the question, we know $\mathbf{A}$ and $\mathbf{B}$ are orthogonal matrix. $\therefore \mathbf{B}(\mathbf{AB})^{-1} = \mathbf{A}^{T}$, $\mathbf{B}^{T}\mathbf{B}(\mathbf{AB})^{-1} = \mathbf{B}^T\mathbf{A}^{T}$, $(\mathbf{AB})^{-1} = \mathbf{B}^{T}\mathbf{A}^{T} = (\mathbf{AB})^T$. Therefore, if $\mathbf{A}$ and $\mathbf{B}$ are $n \times n$ orthogonal matrices, so is $\mathbf{AB}$.
+\end{proof}
+\textbf{1G-9*} a) Let $\mathbf{A}$ be a $3 \times 3$ matrix such that $|\mathbf{A}| \neq 0$. The notes construct a right-inverse $\mathbf{A}^{-1}$, that is, a matrix such that $\mathbf{A} \cdot \mathbf{A}^{-1} = \mathbf{I}$. SHow that every such matrix $\mathbf{A}$ also has a left inverse $\mathbf{B}$ (i.e., a matrix such that $\mathbf{BA} = \mathbf{I}$.
+\\ b) Deduce that $\mathbf{B} = \mathbf{A}^{-1}$ by a one-line argument.
+\begin{proof}
+
 \end{proof}
 \end{document}
