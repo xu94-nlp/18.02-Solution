@@ -518,9 +518,56 @@ a) $\because \mathbf{A}\mathbf{A}^T = \mathbf{I} = \mathbf{A}\mathbf{A}^T
 \\b) $\because \mathbf{A}_{\theta}^T \mathbf{A} = \mathbf{I} \therefore \mathbf{A}_{\theta}$ is an orthogonal matrix.
 \\c) $\because (\mathbf{AB})(\mathbf{AB})^{-1} = \mathbf{I}, \therefore \mathbf{A}^T\mathbf{A}\mathbf{B}(\mathbf{AB})^{-1} = \mathbf{A}^{T}$. By the question, we know $\mathbf{A}$ and $\mathbf{B}$ are orthogonal matrix. $\therefore \mathbf{B}(\mathbf{AB})^{-1} = \mathbf{A}^{T}$, $\mathbf{B}^{T}\mathbf{B}(\mathbf{AB})^{-1} = \mathbf{B}^T\mathbf{A}^{T}$, $(\mathbf{AB})^{-1} = \mathbf{B}^{T}\mathbf{A}^{T} = (\mathbf{AB})^T$. Therefore, if $\mathbf{A}$ and $\mathbf{B}$ are $n \times n$ orthogonal matrices, so is $\mathbf{AB}$.
 \end{proof}
+%
+% 1G-9
+%
 \textbf{1G-9*} a) Let $\mathbf{A}$ be a $3 \times 3$ matrix such that $|\mathbf{A}| \neq 0$. The notes construct a right-inverse $\mathbf{A}^{-1}$, that is, a matrix such that $\mathbf{A} \cdot \mathbf{A}^{-1} = \mathbf{I}$. SHow that every such matrix $\mathbf{A}$ also has a left inverse $\mathbf{B}$ (i.e., a matrix such that $\mathbf{BA} = \mathbf{I}$.
 \\ b) Deduce that $\mathbf{B} = \mathbf{A}^{-1}$ by a one-line argument.
+%
+% 1G-9 Solution
+%
 \begin{proof}
-
+a) $\because |\mathbf{A}| > 0 \therefore |\mathbf{A}^T| > 0.
+\\ \because |\mathbf{A}^T| > 0 \therefore \exists C: \mathbf{A}^T \mathbf{C} = \mathbf{I}, \because (\mathbf{A}^T \mathbf{C})^T = \mathbf{I}^T = \mathbf{I}, \therefore \mathbf{C}^T \mathbf{A} = \mathbf{I}
+$ i.e. $\mathbf{C}^T = \mathbf{B}$ where $\mathbf{B}$ is the left-inverse of the matrix $\mathbf{A}$.
+\\ b) $\because \mathbf{BA} = \mathbf{I} \therefore \mathbf{BA}\mathbf{A}^{-1} = \mathbf{I}\mathbf{A}^{-1}$ i.e. $\mathbf{B}(\mathbf{A}\mathbf{A}^{-1}) = \mathbf{A}^{-1} \implies \mathbf{B} = \mathbf{A}^{-1}$.
+\end{proof}
+%
+% 1G-10
+%
+\textbf{1G-10*} Let $\mathbf{A}$ and $\mathbf{B}$ be two $n \times n$ matrices. Suppose that $\mathbf{B} = \mathbf{P}^{-1}\mathbf{A}\mathbf{P}$ for some invertible $n \times n$ matrix $\mathbf{P}$. Show that $\mathbf{B}^n = \mathbf{P}^{-1} \mathbf{A}^n \mathbf{P}$. If $\mathbf{B} = \mathbf{I}_n$, what is $\mathbf{A}$?
+%
+% 1G-10 Solution
+%
+\begin{proof}
+$\because \mathbf{B}^2 = \mathbf{P}^{-1}\mathbf{A}\mathbf{P}\mathbf{P}^{-1}\mathbf{A}\mathbf{P} = \mathbf{P}^{-1}\mathbf{A}^2 \mathbf{P}
+\\
+\therefore \mathbf{B}^{n} = \mathbf{P}^{-1}\mathbf{A}^{n}\mathbf{P}$
+\\
+If $\mathbf{B} = \mathbf{I}_n$, $\mathbf{A} = \mathbf{I}_n$.
+\end{proof}
+%
+% 1G-11
+%
+\textbf{1G-11*} Repeat Exercise 6a and 6b above, doing it this time for the general $2 \times 2$ matrix $\mathbf{A} = \begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}
+$, assuming $|\mathbf{A}| \neq 0$.
+%
+% 1G-11 Solution
+%
+\begin{proof}
+$
+\begin{cases}
+x_1 = \frac{1}{ad-bc} (d y_1 - b y_2) \\
+x_2 = \frac{1}{ad-bc} (a y_2 - c y_1) \\
+\end{cases}
+\implies
+\mathbf{A}^{-1} = \frac{1}{ad-bc}\begin{pmatrix}
+d & -b \\
+-c & a \\
+\end{pmatrix}
+$
 \end{proof}
 \end{document}
