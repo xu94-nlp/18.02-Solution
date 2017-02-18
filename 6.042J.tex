@@ -32,6 +32,43 @@
 \section{About This Solution Manual}
 This solution manual is written by Yuxun LU from NAIST. All the answers are done by myself. Although I tried my best to ensure the accuracy of every answer, it is unavoidable that there are some mistakes in this solution manual. If the reader found any error in this solution manual, please do not be hesitate to contact me by leaving the comment on my GitHub/Blog.
 
-This solution manual should be referred only if you've tried solving the problems after many efforts but still didn't find the answer. During solving these problems, I found many of them are valuable for practising the skills of both proof and  arithmetic. \textbf{Spending many HOURS on one problem is not an acceptable reason for referring to the solution manual, spending many DAYS is}. At last, enjoy your problems solving and may you all get success in 6.042 self studying!
+This solution manual should be referred only if you've tried solving the problems after many efforts but still didn't find the answer. During solving these problems, I found many of them are valuable for practising the skills of both proof and  arithmetic. \textbf{Spending many HOURS on one problem is not an acceptable reason for referring to the solution manual, spending many DAYS is}. Enjoy your problems solving and may you all get success in 6.042 self studying!
 \section{Problem Set 1}
+\subsection{Problem 1}
+\begin{proof}
+(a) $\exists x: S(x) \wedge A(x)$;
+\\(b) $\forall x: T(x) \wedge S(x) \implies A(x)$;
+\\(c) $\forall x,y: T(x) \wedge \neg A(y) \implies \neg E(x,y)$;
+\\(d) $\exists x,y,z: ( T(x) \wedge T(y) \wedge T(z) ) \wedge ( \neg S(x) \wedge \neg S(y) \neg S(z) )$
+\end{proof}
+\subsection{Problem 2}
+\begin{proof}
+(a) It can be proved that the statement is true, by using a truth table.\\
+(b) This statement is false. It can be disproved by setting $P=T, Q=T, R=F$.
+\end{proof}
+\subsection{Problem 3}
+\begin{proof}
+(a) i) $P \wedge Q = \neg (P nand Q)$; \\
+ii) $(P nand Q) nand \neg Q = P \vee Q$; \\
+iii) $(P nand Q) nand P = P \implies Q$; \\
+(b) $A nand A = \neg A$; \\
+(c) $T = A nand \neg A$; $F = (A nand \neg A) nand (A nand \neg A)$.
+\end{proof}
+\subsection{Problem 4}
+\begin{proof}
+(1) Put the coins on the scale with 6 coins each side. Pick the 6 coins on the lighter side up, and remove all coins on the scale. \\
+(2) Put the 6 coins picked at (1) on the scale, with 3 coins each side. Pick the 3 coins on the lighter side, and remove all coins on the scale. \\
+(3) Put 2 coins from the 3 picked at (2) on the scale, with 1 coin each side. If the scale is balanced, the left one not on the sacle is a counterfeit, otherwise, the one on the light side is a counterfeit.
+\end{proof}
+\subsection{Problem 5}
+\begin{proof}
+Suppose $p$: $r$ is irrational, $q$: $r^{\frac{1}{5}}$ is irrational.
+\\ The predicate in the problem is $p \implies q$. By using truth table we can verify that the contra-positive of $p \implies q$ is $\neg q \implies \neg p$. Thus, as long as we can prove $\neg q \implies \neg p$ is true, then $p \implies q$ is true. \\
+$\neg q$: $r^{\frac{1}{5}}$ is not irrational, i.e. $r^{\frac{1}{5}}$ is rational.
+$\neg p$: $r$ is not irrational, i.e. $r$ is rational.
+\\ $\because r^{\frac{1}{5}}$ is rational, $\therefore r^{\frac{1}{5}}=\frac{m}{n}, m,n \in \mathbb{N}^+$ and $\frac{m}{n}$ is a reduced fraction. \\
+$\because r = (r^{\frac{1}{5}})^{5} = (\frac{m}{n})^5$, $\therefore r = (\frac{m}{n})^5 = \frac{k}{t}; k,t \in \mathbb{N}^+$. (Notice that, we can prove that $\frac{k}{t}$ is a reduced fraction too, by using a lemma that for every integer $t \in \mathbb{N}$, there is one and only one way to write $t$ in the form of multiplication of prime numbers. But to solve this problem, it doesn't matter if we prove this or not.)
+\\ $\because r = \frac{k}{t}; k,t \in \mathbb{N}^+ \therefore r$ is rational, i.e. $\neg q \implies \neg p$ is true. Thus, the original predicate $p \implies q$ is true.
+\end{proof}
+
 \end{document}
