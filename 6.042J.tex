@@ -32,7 +32,7 @@
 \section{About This Solution Manual}
 This solution manual is written by Yuxun LU from NAIST. All the answers are done by myself. Although I tried my best to ensure the accuracy of every answer, it is unavoidable that there are some mistakes in this solution manual. If the reader found any error in this solution manual, please do not be hesitate to contact me by leaving the comment on my GitHub/Blog.
 
-This solution manual should be referred only if you've tried solving the problems after many efforts but still didn't find the answer. During solving these problems, I found many of them are valuable for practising the skills of both proof and  arithmetic. \textbf{Spending many HOURS on one problem is not an acceptable reason for referring to the solution manual, spending many DAYS is}. Enjoy your problems solving and may you all get success in 6.042 self studying!
+This solution manual should be referred only if you've tried solving the problems after many efforts but still didn't find the answer. During solving these problems, I found many of them are valuable for practising the skills of both proof and  arithmetic. \textbf{Spending many HOURS on one problem is not an acceptable reason for referring to the solution manual, spending many DAYS is}. Enjoy your problems solving and wish you all get success in 6.042 self studying!
 \section{Problem Set 1}
 \subsection{Problem 1}
 \begin{proof}
@@ -70,5 +70,21 @@ $\neg p$: $r$ is not irrational, i.e. $r$ is rational.
 $\because r = (r^{\frac{1}{5}})^{5} = (\frac{m}{n})^5$, $\therefore r = (\frac{m}{n})^5 = \frac{k}{t}; k,t \in \mathbb{N}^+$. (Notice that, we can prove that $\frac{k}{t}$ is a reduced fraction too, by using a lemma that for every integer $t \in \mathbb{N}$, there is one and only one way to write $t$ in the form of multiplication of prime numbers. But to solve this problem, it doesn't matter if we prove this or not.)
 \\ $\because r = \frac{k}{t}; k,t \in \mathbb{N}^+ \therefore r$ is rational, i.e. $\neg q \implies \neg p$ is true. Thus, the original predicate $p \implies q$ is true.
 \end{proof}
-
+\subsection{Problem 6}
+\begin{proof}
+Notice that this problem reduces to four situations. In $x$, $y$, $z$, there (1) exists 1 odd number and 2 even numbers; (2) exists 2 odd numbers and 1 even number; (3) exists 3 odd numbers; (4) exists 3 even numbers.
+\\ (1) Suppose $w$, $x$, $y$ are odd numbers, $w^2$, $x^2$ and $y^2$ are odd numbers too. The sum of three odd numbers are an odd number. Because the square of an even number can't be a odd number, if $w$, $x$, $y$ are odd numbers, therefore, $z$ can't be an even number.
+\\ (2) Suppose $w$ is an odd number, $x$ and $y$ are two even numbers, $w^2$ is an odd number and $x^2$ and $y^2$ are two even numbers. Their sum is an odd number. Thus, $z$ can't be an even number.
+\\ (3) Suppose $w$ is an odd number, $x$ is an odd number and $y$ is an even number. We'll prove that in this condition $z$ can't be an even number by contradiction.
+\\ If $z$ is an even number, let $w = 2i + 1, x = 2j + 1, y = 2k, z = 2t; i,j,k,t \in \mathbb{N}^+$.
+\\ According to the equation in the problem, we have
+\\ $w^2 + x^2 + y^2 = z^2$, $4i^2 + 4i + 1 + 4j^2 + 4j + 1 + 4k^2 = 4t^2$.
+\\ $i^2 + j^2 + k^2 + i + j + \frac{2}{4} = t^2$ (Divide both sides by 4).
+\\ $\because t \in \mathbb{N}^+, \therefore t^2 \in \mathbb{N}^+$. $\because t^2 = m + \frac{2}{4}; (m = i^2 + j^2 + k^2 + i + j, m \in \mathbb{N}^+)$
+\\ $\therefore t^2 \notin \mathbb{N}^+$. Thus, $z$ can't be an even number because of this contradiction. 
+\\ (4) Suppose $w,x,y$ are even numbers. If $z$ is an even number, let $w=2i, x=2j, y=2k, z=2t; i,j,k,t \in \mathbb{N}^+$. By the arithmetic used in (3), we derive that 
+\\ $i^2 + j^2 + k^2 = t^2$. Because there are $i,j,k,t$ that satisfy this equation, therefore if $w,x,y$ are even numbers and $w,x,y,z \in \mathbb{N}^+$, $z$ is an even number.
+\\ To sum up, if and only if $w,x,y$ are even numbers and $w,x,y,z \in \mathbb{N}^+$, $z$ is an even number.
+\\ \textbf{Notice: a strict proof shall prove the proposition again inversely. That is, prove that if $z$ is an even number, $w,x,y$ must be three even numbers because the problem asks us to prove $z$ is an even number ``IF AND ONLY IF" $w,x,y$ are even numbers. The ``inverse" proof, is written in a same way of the three steps above so I just omitted them.}
+\end{proof}
 \end{document}
