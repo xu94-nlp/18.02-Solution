@@ -32,6 +32,8 @@
 \section{About This Solution Manual}
 This solution manual is written by Yuxun LU from NAIST. All the answers are done by myself. Although I tried my best to ensure the accuracy of every answer, it is unavoidable that there are some mistakes in this solution manual. If the reader found any error in this solution manual, please do not be hesitate to contact me by leaving the comment on my GitHub/Blog.
 
+Besides, in this solution manual, we let $\mathbb{N}$ containing the number $0$, i.e. $\mathbb{N} = \{0, 1, 2, 3, 4, ...\}$. 
+
 This solution manual should be referred only if you've tried solving the problems after many efforts but still didn't find the answer. During solving these problems, I found many of them are valuable for practising the skills of both proof and  arithmetic. \textbf{Spending many HOURS on one problem is not an acceptable reason for referring to the solution manual, spending many DAYS is}. Enjoy your problems solving and wish you all get success in 6.042 self studying!
 \section{Problem Set 1}
 \subsection{Problem 1}
@@ -86,5 +88,74 @@ Notice that this problem reduces to four situations. In $x$, $y$, $z$, there (1)
 \\ $i^2 + j^2 + k^2 = t^2$. Because there are $i,j,k,t$ that satisfy this equation, therefore if $w,x,y$ are even numbers and $w,x,y,z \in \mathbb{N}^+$, $z$ is an even number.
 \\ To sum up, if and only if $w,x,y$ are even numbers and $w,x,y,z \in \mathbb{N}^+$, $z$ is an even number.
 \\ \textbf{Notice: a strict proof shall prove the proposition again inversely. That is, prove that if $z$ is an even number, $w,x,y$ must be three even numbers because the problem asks us to prove $z$ is an even number ``IF AND ONLY IF" $w,x,y$ are even numbers. The ``inverse" proof, is written in a same way of the three steps above so I just omitted them.}
+\end{proof}
+\section{Problem Set 2}
+\subsection{Problem 1}
+\begin{proof} Another way for writing the proposition in the problem is: given five arbitrary points $a_1,a_2,a_3,a_4,a_5$ on the number axis, there must be three points that their indexes are in increasing order or decreasing order. We will solve this problem in this perspecitve.
+\\ a) Assuming $a_1 < a_2$, if $a_3 \geq a_2$, $a_1, a_2, a_3$ forms a monotonically increasing $3-chain$ thus it's impossible. There left $a_3 \leq a_1$ or $a_1 < a_3 < a_2$. Now consider $a_4$.
+\\ (1) If $a_3 \leq a_1$
+\\ If $a_3 = a_1$, the number axis is divided into four parts, $(-\infty, a_3), [a_3, a_1], (a_1, a_2), [a_2, +\infty)$. Because $a_1 = a_3$, therefore $[a_3, a_1]$ contains only one element and we can write it as $[a_1, a_3]$ also. If $a_4 \in (-\infty, a_3)$, $a_1, a_3, a_4$ forms a monotonically decreasing $3-chain$. If $a_4 \in (a_1, a_2)$, $a_1, a_3, a_4$ forms a monotonically increasing $3-chain$. Thus, $a_3$ cannot equal to $a_1$. \textbf{Notice that their order on number axis is $a_4, a_3, a_1$}.
+\\ If $a_3 < a_1$, the four intervals are $(-\infty, a_3), [a_3, a_1], (a_1, a_2), [a_2, +\infty)$, it's OK for $a_4$ to fit in the interval $[a_3, a_1]$ or $(a_1, a_2)$.
+\\ (2) If $a_1 < a_3 < a_2$
+\\ The intervals are $(-\infty, a_1), [a_1, a_3], (a_3, a_2], (a_2, +\infty)$. If $a_4 \in (-\infty, a_3]$, $a_2, a_3, a_4$ forms a monotonically decreasing $3-chain$. If $a_4 \in (a_3, +\infty)$, $a_1, a_3, a_4$ forms a monotonically increasing $3-chain$. So it's impossible.
+\\ Thus, if there is no $3-chain$ in our sequence, $a_3$ must be less than $a_1$.
+\\ b) By (a), we know the intervals are $(-\infty, a_3), [a_3, a_1], (a_1, a_2), [a_2, +\infty)$, if $a_4 \in (-\infty, a_3]$, $a_4, a_3, a_1$ forms a monotonically increasing $3-chain$. If $a_4 \in (a_3, a_2)$ it's OK. If $a_4 \in [a_2, +\infty)$, $a_1, a_2, a_4$ forms a monotonically increasing $3-chain$. Thus, $a_4 \in (a_3, a_2)$ it's the only possible situation.
+\\ c) By (b) we know the interval after put $a_4$ in is $(-\infty, a_3), [a_3, a_1], (a_1, a_4), [a_4, a_2), [a_2, +\infty)$ or $(-\infty, a_3), [a_3, a_4], (a_4, a_1], (a_1, a_2), [a_2, +\infty)$. Notice that, no matter which interval we put $a_5$ in, there must be at least one $3-chain$. Thus, any value of $a_5$ will result in at least one $3-chain$.
+\\ d) Assume there is a sequence of five distinct integers that doesn't form a $3-chain$:
+\\ For $a_1$, its position on number axis is arbitrary.
+\\ For $a_2$, its position on number axis is either $a_1$'s left side, or $a_1$'s right side. If $a_2$ is on $a_1$'s left side, assuming $\hat{a}_1 = a_2, \hat{a}_2 = a_1$, the situation reduces to (a). Otherwise, it's the situation in (a). By (a) - (c) we know that there is impossible to find such a sequence. This conflicts to our assumption. Thus, there is no such sequence that contains five distinct numbers that doesn't form a $3-chain$.
+\end{proof}
+\subsection{Problem 2}
+\begin{proof}
+We prove the proposition by using mathematical induction.
+\\ Let $P(n): \sum_{i=0}^n i^3 = (\frac{n(n+1)}{2})^2$.
+\\ \textit{Base case}: $P(0) = 0^3 = 0, (\frac{0(0+1)}{2})^2 = 0$. Thus, $P(n)$ is true for $n=0$.
+\\ \textit{Inductive step}: Assume $P(n)$ is true for all $n \in \mathbb{N}$.
+\\ $\because P(n+1) = \sum_{i=0}^{n+1} i^3 = \sum_{i=0}^n i^3 + (n+1)^3 = (\frac{n(n+1)}{2})^2 + (n+1)^3$
+\\ $= \frac{1}{4}(n^2(n+1)^2) + (n+1)^3 = \frac{1}{4}(n^2+4(n+1))(n+1)^2$
+\\ $= \frac{1}{4}(n+2)^2(n+1)^2 = \frac{(n+1)^2(n+1+1)^2}{4} = (\frac{(n+1)(n+2)}{2})^2 = P(n+1)$.
+\\ $\therefore P(n) \implies P(n+1)$.
+\\ Therefore, $P(n)$ is true for all $n \in \mathbb{N}$ by induction, and the theorem is proved.
+\end{proof}
+\subsection{Problem 3}
+\begin{proof}
+We are going to prove this theorem by mathematical induction.
+\\The predicate is $P(n)$ If fewer than $n$ students in class are initially infected, the whole class will never be completely infected.
+\\ \textit{Base case}: $P(1)$ is true. Because on $P(1)$, there are no student in classroom.
+\\ \textit{Inductive step}: For $P(n+1)$,
+\\ 1) If for any $n \times n$ spaces contained in the $(n+1)\times(n+1)$ classroom, there is no one $n \times n$ space that has $n$ students, then all $n \times n$ spaces cannot be all infected (by our inductive assumption). Thus, $P(n+1)$ is true.
+\\ 2) If there is one $n \times n$ (and only one, because $P(n+1)$ assumes there are fewer than $n+1$ students in the $(n+1)\times(n+1)$ classroom) space that contains $n$ students, there are two phenomenons.
+\\ 2-1) and if the $n \times n$ space cannot be all infected by these $n$ students, then so does the $(n+1) \times (n+1)$ classroom, thus, $P(n+1)$ is true.
+\\ 2-2) and if the $n \times n$ space can be all infected by these $n$ students, the $2n-1$ students sitting on the left one vertical line and one horizontal line cannot be infected, because they are only adjacent to only one infected student.
+\\ By 1), 2-1), 2-2), $P(n) \implies P(n+1)$. Thus, $P(n)$ is true for all $n \in \mathbb{N}^+$.
+\end{proof}
+\subsection{Problem 4}
+\begin{proof}
+$P(0)$ cannot imply $P(1)$, because $a^1 = \frac{a^0 \cdot a^0}{a^{-1}}$, but $P(n)$ only assumed for $n \in \mathbb{N}$, i.e. $P(n)$ doesn't cover $a^{-1}$.
+\end{proof}
+\subsection{Problem 5}
+\begin{proof}
+We are going to prove it by using mathematical induction. The predicate is $P(n)=G_n=3^n - 2^n$.
+\\ \textit{Base case}: $P(2) = 3^2 - 2^2 = 5 = 5G_{n-1} - 6G_{n-2} = 5 \times 1 - 0$.
+\\ Assume $P(n)$ is true for all $n \geq 2 \wedge n \in \mathbb{N}^+$.
+\\ $ \because G_{n+1} = 5G_{n} - 6G_{n-1} = 5 \times (3^n - 2^n) - 6 \times (3^{n-1} - 2^{n-1})$
+\\ $ = 15 \times 3^{n-1} - 10 \times 2^{n-1} - 6 \times 3^{n-1} + 6 \times 2^{n-1}
+$
+\\ $ = 9 \times 3^{n-1} - 4 \times 2^{n-1} $
+\\ $ = 3^{n + 1} - 2^{n + 1} = P(n+1)$.
+\\ $ \therefore P(n) \implies P(n+1)$, i.e. $P(n)$ is true for all $n \geq 2 \wedge n \in \mathbb{N}^+$.
+\end{proof}
+\subsection{Problem 6}
+\begin{proof} The proof is on the accompanied textbook so only ideas are provided here. A useful hint is, do not image the tile "slide" into the blank, rather, try to image the blank and the slide swap their position.
+\\ a) No, it can't. Because a row move doesn't change the relative position between the moved tile and other tiles.
+\\ b) Three.
+\\ c) No effect, by (a).
+\\ d) The inversion number would decrease by 3 or by 1 or increase by 1 or by 3.
+\\ e) Because only two lines that the blank and the tile stayed are effected, and the change of inversion number would be -3, -1, 1 or 3. After a (long) discussion, we concluded that the change of the inversion number caused by the row contained blank square and the row contained the moved tile is 1 or -1. Since only three tiles are effected, the parity must be different (+2/-1, +1/-2, -1/+2, -2/+1, respectively to some different situations).
+\\ f) If the inversion is 0, the blank is not where it stayed at the initial stage. From this idea it is easy to prove (f).
+\end{proof}
+\subsection{Problem 7}
+\begin{proof}
+
 \end{proof}
 \end{document}
