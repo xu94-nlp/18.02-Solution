@@ -156,6 +156,35 @@ $
 \end{proof}
 \subsection{Problem 7}
 \begin{proof}
-
+We do not need to use \textit{strong induction} here. We are going to prove the proposition with mathematical induction.
+\\ The predicate is $P(n)$: after $n$ times production, the number of Z-lings is at most as twice as the number of B-lings.
+\\ \textit{Base case}: $P(0)$ is true, since the at the initial stage, the number of Z-lings are less than the number of B-lings.
+\\ \textit{Inductive step}: Assume $P(n)$ is true for all $n \in \mathbb{N}$. For $P(n+1)$, assume $x$ is the number of Z-lings, $y$ is the number of B-lings after $n$ times reproduction.
+\\ Case 1: $x \geq y$, let $\Delta x, \Delta y$ be the increment after the $n+1$ time reproduction, and $x', y'$ be the number of Z-lings and B-lings after the $n+1$ time reproduction, respectively.
+\\
+$
+\begin{cases}
+\Delta x = \left\lfloor\frac{x - y}{2}\right\rfloor \times 3 - (x-y) = \frac{1}{2} \left\lfloor(x-y)\right\rfloor
+\\\Delta y = 0
+\\ x' = x + \Delta x
+\\ y' = y + \Delta y
+\end{cases}
+\because y \leq x \leq 2y \therefore 0 \leq x-y \leq y
+\\ \because 0 \leq x-y \leq y \therefore \Delta x < y.
+\\ \because \Delta x < y, x < y, \therefore x' < 2y'(=2y).
+$
+\\ Case 2: $x < y$
+\\
+$
+\begin{cases}
+\Delta x = \left\lfloor \frac{y-x}{2} \right\rfloor
+\\ \Delta y = 2 \times \left\lfloor \frac{(y-x)}{2} \right\rfloor
+\\ x' = x + \Delta x
+\\ y' = y + \Delta y
+\end{cases}
+\\ \because y'-x' = y-x+\left\lfloor\frac{(y-x)}{2}\right\rfloor > 0.
+\\ \therefore y' > x'
+$
+\\ By case 1 and case 2, we know that $P(n) \implies P(n+1)$, thus, $P(n)$ is true for all $n \in \mathbb{N}$.
 \end{proof}
 \end{document}
