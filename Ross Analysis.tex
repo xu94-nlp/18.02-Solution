@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\title{Solution Manual of Elementary Analysis}
+\author{Lu YuXun}
+\date{February 2017}
+
+
+\linespread{1.5}
+
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+\maketitle
+\section*{About This Solution Manual}
+This solution manual is done by Yuxun LU from Nara Institute of Science and Technology. Corresponding textbook is ``Elementary Analysis The theory of Calculus" Second Edition by Kenneth A. Ross. This solution manual is under the Creative Commons License.
+\section{Introduction}
+\subsection{The Set of Natural Numbers}
+\begin{proof}
+\textbf{1.1}
+We'll use induction to prove this. Our predicate is 
+\\ $P(n): \sum_{i=1}^n i^2 = \frac{1}{6}n(n+1)(2n+1)$.
+\\ \textit{Base case} $P(1): 1^2 = \frac{1}{6}(1 \times 2 \times 3)$.
+\\ \textit{Inductive step} Assume $\forall n \in \mathbb{N}$, $P(n)$ is true. For $P(n+1)$,
+\\ $1 + 2 + ... + n^2 + (n+1)^2
+\\ = \frac{1}{6}n(n+1)(2n+1) + (n+1)^2
+\\ = \frac{1}{6}(n+1)( n(2n+1) + 6(n+1) )
+\\ = \frac{1}{6}(n+1)(2n^2 + 7n + 6) 
+\\ = \frac{1}{6}(n+1)(n+2)(2n+3) 
+\\ = \frac{1}{6}(n+1)(n+1+1)(2(n+1)+1)$
+\\ $\therefore P(n) \implies P(n+1)$. Thus, $\forall n \in \mathbb{N}$, $P(n)$ is true.
+\end{proof}
+\begin{proof}
+\textbf{1.2} We'll use mathematical induction to prove this. Our predicate is
+\\ $P(n): \sum_{i=1}^n (8i-5) = 4n^2 - n$.
+\\ \textit{Base case} $P(1) = 8 - 5 = 3 = 4 \times 1^2 - 1$.
+\\ \textit{Inductive step} Assume $\forall n \in \mathbb{N}$, $P(n)$ is true. For $P(n+1)$,
+\\ $\sum_{i=1}^{n+1} (8i-5)
+\\ = 4n^2-n + 8(n+1) - 5 
+\\ = 4n^2 + 7n + 3
+\\ = 4n^2 + 8n + 4 - (n+1)
+\\ = 4(n^2+2n+1) - (n+1)
+\\ = 4(n+1)^2 - (n-1)
+\\ \therefore P(n) \implies P(n+1)$. Thus, $\forall n \in \mathbb{N}$, $P(n)$ is true.
+\end{proof}
+\begin{proof}
+\textbf{1.3} We'll use mathematical induction to prove this. Our predicate is
+\\ $P(n): \sum_{i=1}^n i^3 = (\sum_{i=1}^n i)^2$.
+\\ \textit{Base case} $P(1) = 1^3 = 1^2$.
+\\ \textit{Inductive step} Assume $\forall n \in \mathbb{N}$, $P(n)$ is true. For $P(n+1)$,
+\\ $\sum_{i=1}^n i^3 
+\\ = (1 + 2 + ... + n )^2 + (n+1)^3
+\\ = (1 + 2 + ... + n )^2 + (n+1)(n+1)(n+1)
+\\ = (1 + 2 + ... + n )^2 + \frac{1}{2}(n+1)(n+1)(n+1) \cdot 2
+\\ = (1 + 2 + ... + n )^2 + \frac{1}{2}( (n+1)n + n+1 )(n+1) \cdot 2
+\\ = (1 + 2 + ... + n )^2 + \frac{1}{2}2\cdot(n+1)n(n+1) + \frac{1}{2}(n+1)^2 \cdot 2 
+\\ = (1 + 2 + ... + n )^2 + 2(1 + 2 + ... + n)(n+1) + (n+1)^2
+\\ = (1 + 2 + ... + n + n + 1)^2
+\\ \therefore P(n) \implies P(n+1)$. Thus, $\forall n \in N$, $P(n)$ is true.
+\end{proof}
+
+\end{document}
