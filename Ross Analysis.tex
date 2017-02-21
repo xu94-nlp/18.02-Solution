@@ -128,7 +128,30 @@ From now on the prove will be simplified.
 \begin{proof}
 \textbf{1.8} a) $P(2) = 4 > 3$.$\forall n \geq 2 \wedge n \in \mathbb{N}$, $P(n): n^2 > n + 1$.
 \\ $P(n+1): (n+1)^2 = n^2 + 2n + 1 > (n+1) + 2n + 1 > (n+1) + 1$.
-\\ b) $\forall n \geq 4 \wedge n \in \mathbb{N}$, $P(n): n! > n^2$. $P(n+1) = (n+1)! = (n+1)n! > (n+1)n^2> (n+1)^2$.
+\\ b) $\forall n \geq 4 \wedge n \in \mathbb{N}$, $P(n): n! > n^2$. $P(n+1) = (n+1)! = (n+1)n! > (n+1)n^2$.
+\\ $n^2(n+1) - (n+1)^2 = (n+1)(n^2-n-1) = (n+1)(n(n-1)-1)
+\\ \because n > 4 \implies n(n-1) > 12 > 1 \therefore \forall n > 4 \wedge n \in \mathbb{N}$, $(n+1)(n(n-1)-1) > 0$.
+\\ $\therefore \forall n > 4 \wedge n \in \mathbb{N}$, $n^2(n+1) > (n+1)^2$.
+\\ $\therefore \forall n > 4 \wedge n \in \mathbb{N}$, $(n+1)n! > (n+1)n^2 > (n+1)^2$.
 \end{proof}
-
+\begin{proof}
+\textbf{1.9} a) $n \geq 5$.
+\\ b) $P(n): 2^n > n^2 \forall n \in \mathbb{N} \wedge n \geq 5$.
+\\ $P(n+1): 2^{n+1} = 2^n + 2^n > 2n^2
+\\ \because 2n^2 - (n+1)^2 = n^2 - 2n -1 = (n-1)^2 > 0$ $(\forall n > 1 \wedge n \in \mathbb{N})$
+\\ $\therefore 2^n + 2^n > 2n^2 > (n+1)^2$, i.e. $P(n) \implies P(n+1)$.
+\end{proof}
+\begin{proof}
+\textbf{1.10} $P(n): (2n+1) + (2n+3) + (2n+5) + ... + (2n + 2n - 1) = 3n^2$.
+\\$P(n+1): (2(n+1) + 1 ) + (2 (n+1) + 3 ) + ( 2 (n+1) + 5) + ... + (2(n+1) +2(n+1) - 1)
+\\= (2n+3) + (2n+5) + (2n+7) + ... + (4n-1) + (4n+1) + (4n+3) 
+\\= 3n^2 - (2n+1) + (4n+1) + (4n+3) 
+\\ = 3n^2 + 6n + 3 = 3(n+1)^2$.
+\end{proof}
+\section{The Set of Rational Numbers}
+\section{The Set of Real Numbers}
+\begin{proof}
+\textbf{3.2} a) At the middle step $0 + a \cdot 0$ implicitly uses $0 + a \cdot 0 = a \cdot 0 + 0$. Because \textbf{A3} writes $a + 0 = a $ for all $a$, but not $0 + a = a$ for all $a$.
+\\ b) The same. $0 \cdot b = 0$ implicitly uses $0 \cdot b = b \cdot 0 = 0$ because the original proposition (ii) states $a \cdot 0 = 0$ for all $a$ but not $0 \cdot a = 0$.
+\end{proof}
 \end{document}
