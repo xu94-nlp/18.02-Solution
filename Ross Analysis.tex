@@ -154,4 +154,27 @@ From now on the prove will be simplified.
 \textbf{3.2} a) At the middle step $0 + a \cdot 0$ implicitly uses $0 + a \cdot 0 = a \cdot 0 + 0$. Because \textbf{A3} writes $a + 0 = a $ for all $a$, but not $0 + a = a$ for all $a$.
 \\ b) The same. $0 \cdot b = 0$ implicitly uses $0 \cdot b = b \cdot 0 = 0$ because the original proposition (ii) states $a \cdot 0 = 0$ for all $a$ but not $0 \cdot a = 0$.
 \end{proof}
+\begin{proof}
+\textbf{3.3} iv) $\because (a+(-a))(b+(-b)) = 0 \cdot 0 = 0$ (By (ii) ).
+\\$\therefore ab + a(-b) + (-a)b + (-a)(-b) = 0$.
+\\$
+\begin{cases}
+ab + a(-b) = a(b + (-b) ) = a \cdot 0 = 0
+\\ (-a)b + (-a)(-b) = (-a)(b + (-b) ) = (-a) \cdot 0 = 0
+\end{cases}
+\\ \therefore ab + a(-b) = (-a)b + (-a)(-b) = (-a)(-b) + (-a)b
+$ (The commutative law).
+\\ If we can prove $a(-b) = (-a)b$, by $a + c = b + c \implies a = b$, we know $ab = (-a)(-b)$.
+\\ $\because (-a)b = -ab$, $a(-b)=(-b)a=-ba$ (By Theorem 3.1 (iii) ) and 
+\\ $ 
+\begin{cases}
+ab + (-ab) = 0
+\\ ba + (-ba) = ab + (-ba) = 0.
+\end{cases}
+\\ \therefore ab + (-ab) = ab + (-ba)$, $-ab = -ba$ (By Theorem 3.1 (i) ).
+\\ $\because (-a)b = -ab$ , $a(-b) = (-b)a = -ba$.
+\\ $\therefore (-a)b = (-b)a$.
+\\ $\because (-a)b = (-b)a$, $ab + a(-b) = (-a)(-b) + (-a)b$.
+\\ $\therefore ab = (-a)(-b)$.
+\end{proof}
 \end{document}
