@@ -190,4 +190,32 @@ ab + (-ab) = 0
 \\Therefore, we reach a contradiction with our premise $a < \hat{b}$, $\forall \hat{b} \in \mathbb{B}$ that $\hat{b} \neq a$. 
 \\Thus, $a \notin \mathbb{B}$, i.e., $a \leq b$. 
 \end{proof}
+\section{The Completeness Axiom}
+\textbf{4.7} a) By 4.6 (a) we know
+$ \inf S \leq \sup S$, $\inf T \leq \sup T$.
+\\$ \because \sup T \geq t$, $\forall t \in \mathbb{T}$, $\mathbb{S} \subseteq \mathbb{T}$
+\\$ \therefore \sup T \geq s$, $\forall s \in \mathbb{S}$
+\\$ \because \forall b: \forall s \in \mathbb{S}$ $ b \geq s$, $\sup S \leq b$
+\\$ \therefore \sup T \geq \sup S$
+\\$ \because \inf T \leq t$, $\forall t \in \mathbb{T}$.
+\\$ \therefore \inf T \leq s$, $\forall s \in \mathbb{S}$
+\\$ \because \forall b: \forall s \in \mathbb{S}$ $b \leq s$, $\inf S \geq b$
+\\$ \therefore \inf S \geq \inf T$
+\\ Therefore, we conclude that $\inf T \leq \inf S \leq \sup S \leq \sup T$.
+\\ \textbf{4.12} Let $t = r + \sqrt{2}, r \in \mathbb{Q}$. 
+\\ If $t \in \mathbb{Q}$, $\because r \in \mathbb{Q} \therefore t-r \in \mathbb{Q}$.
+\\ $\because t - r = \sqrt{2}$, $\sqrt{2} \notin \mathbb{Q}$
+\\ $\therefore t-r \notin \mathbb{Q}$. We reach a contradition. Therefore, $t$ is not a rational number, i.e., $t \in \mathbb{I}$.
+\\ $\exists q \in \mathbb{Q}$, $a < q < b$ (By Archimedean property).
+\\ $\because q < b, \therefore (b-q) > 0$
+\\ $\because (b-q) > 0, \therefore \exists n \in \mathbb{N}$ s.t. $n(b-q) > \sqrt{2}$.
+\\ $\because n(b-q) > \sqrt{2} \therefore nb - nq > \sqrt{2}$.
+\\ $\because nb - nq > \sqrt{2} \therefore b > q + \frac{1}{n}\sqrt{2}$.
+\\ $\because n \in \mathbb{N} \therefore n > 0$
+\\ $\because n > 0, \sqrt{2} > 0 \therefore q + \frac{1}{n}\sqrt{2} > a$.
+\\ $\because q + \frac{1}{n} \sqrt{2} < b$, $q + \frac{1}{n}\sqrt{2} > a$
+\\ $\therefore a < q + \frac{1}{n}\sqrt{2} < b$.
+\\ $\because q + \frac{1}{n}\sqrt{2} = \frac{nq + \sqrt{2}}{n}$ and $nq,n \in \mathbb{Q}$. $\therefore nq + \sqrt{2} \in \mathbb{I}$, $\frac{nq + \sqrt{2}}{n} \in \mathbb{I}$.
+\\ $\because \frac{1}{n}\sqrt{2} + q \in \mathbb{I}$, $a < q + \frac{1}{n}\sqrt{2} < b$.
+\\ $\therefore \exists x \in \mathbb{I}$ s.t. $a < x < b$.
 \end{document}
