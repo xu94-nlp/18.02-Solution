@@ -177,4 +177,17 @@ ab + (-ab) = 0
 \\ $\because (-a)b = (-b)a$, $ab + a(-b) = (-a)(-b) + (-a)b$.
 \\ $\therefore ab = (-a)(-b)$.
 \end{proof}
+\begin{proof}
+\textbf{3.8} Let $\mathbb{B} = \{\hat{b}: \hat{b} > b, \hat{b} \in \mathbb{R}\}$.
+\\ Assume $a \in \mathbb{B}$, i.e. $\exists \hat{b}_1 \in \mathbb{B}$ s.t. $\hat{b}_1 = a$.
+\\ $\because a \leq \hat{b}$, $\forall \hat{b} \in \mathbb{B}$.
+\\ $\therefore a < b^*$, $\forall b^* \in \mathbb{B}$ and $b^* \neq \hat{b}_1$.
+\\ Let $a = b + \epsilon$, $\epsilon \in \mathbb{R}$ and $\epsilon > 0$.
+\\ Let $\tilde{b} = b + \frac{1}{2} \epsilon$, $\because \epsilon > 0, \therefore \tilde{b} > b, a > b$. 
+\\ $\because \tilde{b} = b + \frac{1}{2}\epsilon \therefore \tilde{b} < a$, $\tilde{b} \in \mathbb{B}$.
+\\ $\because \tilde{b} \in \mathbb{B}$ and $\tilde{b} < a$.
+\\ $\therefore \exists \hat{b} \in \mathbb{B}: \hat{b} < a$ and $\tilde{b} \neq a$. 
+\\Therefore, we reach a contradiction with our premise $a < \hat{b}$, $\forall \hat{b} \in \mathbb{B}$ that $\hat{b} \neq a$. 
+\\Thus, $a \notin \mathbb{B}$, i.e., $a \leq b$. 
+\end{proof}
 \end{document}
